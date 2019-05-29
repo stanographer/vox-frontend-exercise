@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const mapStateToProps = state => ({
-  stories: state.stories
-});
+const mapStateToProps = state => {
+  console.log('mapStateToProps', state);
+  return {
+      stories: state.stories
+  };
+};
 
-const ConnectedQueue = () => {
+const ConnectedQueue = ({stories}) => {
+  console.log(stories);
   return (
       <section>
         <h1 className="
@@ -14,19 +18,19 @@ const ConnectedQueue = () => {
         px-6
         py-2">Queue</h1>
         <ul>
-          {/*{*/}
-          {/*  stories.map(el => (*/}
-          {/*          <li key={el.title}>*/}
-          {/*            {el.title}*/}
-          {/*          </li>*/}
-          {/*      )*/}
-          {/*  )*/}
-          {/*}*/}
+          {
+            stories.map(({id, title}) => (
+                    <li key={id}>
+                      {title}
+                    </li>
+                )
+            )
+          }
         </ul>
       </section>
   );
 };
 
-const Queue = connect(ConnectedQueue)(mapStateToProps, null);
+const Queue = connect(mapStateToProps)(ConnectedQueue);
 
 export default Queue;
