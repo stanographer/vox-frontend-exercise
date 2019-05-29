@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// Components
+import StoryCard from '../../components/StoryCard';
+
 const mapStateToProps = state => {
   console.log('mapStateToProps', state);
   return {
-      stories: state.stories
+    stories: state.stories
   };
 };
 
@@ -15,18 +18,22 @@ const ConnectedQueue = ({stories}) => {
         <h1 className="
         font-bold
         text-xl
-        px-6
-        py-2">Queue</h1>
-        <ul>
-          {
-            stories.map(({id, title}) => (
-                    <li key={id}>
-                      {title}
-                    </li>
-                )
-            )
-          }
-        </ul>
+        pb-4">
+          Queue
+        </h1>
+        {
+          stories.map(({id, title, author, publishedTime, img, liveOrder}) => (
+                  <StoryCard
+                      key={id}
+                      title={title}
+                      author={author}
+                      img={img}
+                      publishedTime={publishedTime}
+                      liveOrder={liveOrder}
+                  />
+              )
+          )
+        }
       </section>
   );
 };
