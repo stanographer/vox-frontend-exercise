@@ -39,29 +39,37 @@ const StoryCard = ({title, author, publishedTime, img}) => {
               flex-col
               justify-between
               leading-normal">
-            <div className="mb-0">
+            <div className="
+            mb-0
+            lg:mt-4
+            ">
               <div className="
               text-gray-900
               font-bold
-              text-xl
-              mb-2">
+              text-lg">
                 {title}
               </div>
             </div>
             <div className="
             flex
-            items-center">
+            items-center
+            mb-2">
               <div className="text-sm">
                 <p className="
-                m-0
+                pb-2
+                pt-1
                 sm:m-0
-                text-gray-900
+                text-infoTextGray
                 leading-none">
                   {author}
                 </p>
                 <PublishedTime
                     time={publishedTime}
-                    classes="text-gray-600 mb-2 sm:m-0"
+                    classes="
+                    text-xs
+                    text-infoTextGray
+                    mb-2
+                    sm:m-0"
                 />
               </div>
             </div>

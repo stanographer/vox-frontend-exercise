@@ -14,11 +14,12 @@ const mapStateToProps = state => {
 const ConnectedQueue = ({stories}) => {
   console.log(stories);
   return (
-      <section>
+      <section className="px-6 py-4">
         <h1 className="
         font-bold
         text-xl
-        pb-4">
+        pb-4
+        ">
           Queue
         </h1>
         {
