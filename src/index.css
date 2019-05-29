@@ -7165,9 +7165,12 @@
 }
 
 body, html {
+  background-color: #f9f9f9;
   font-family: 'Muli', sans-serif;
   margin: 0;
 }
+
+/*overriding the default border-bottom because it does not play well with custom border color*/
 
 .border-b {
   border-bottom: 1px solid #e1e1e1;
