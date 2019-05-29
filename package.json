@@ -8,10 +8,12 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run watch:css & react-scripts start",
+    "build": "npm run build:css && react-scripts build",
+    "build:css": "postcss src/styles/index.css -o src/index.css",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch:css": "postcss src/styles/index.css -o src/index.css -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,7 +31,8 @@
     ]
   },
   "devDependencies": {
-    "jest": "^24.8.0",
+    "autoprefixer": "^9.5.1",
+    "postcss-cli": "^6.1.2",
     "tailwindcss": "^1.0.2"
   }
 }

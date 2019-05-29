@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
 
-const App = () => {
+// Components
+import Nav from './components/Nav';
+
+function App() {
   return (
-      <div>
-        Hi
-      </div>
+   <div>
+     <Nav />
+   </div>
   );
-};
+}
 
 export default App;
