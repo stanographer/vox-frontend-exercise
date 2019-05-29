@@ -5,7 +5,8 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "npm run watch:css & react-scripts start",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "autoprefixer": "^9.5.1",
     "postcss-cli": "^6.1.2",
+    "react-redux": "^7.0.3",
     "tailwindcss": "^1.0.2"
   }
 }
