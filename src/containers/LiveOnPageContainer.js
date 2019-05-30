@@ -15,7 +15,6 @@ const StoryList = styled.div`
 `;
 
 const mapStateToProps = state => {
-  console.log('mapStateToProps', state);
   return {
     state: state
   };

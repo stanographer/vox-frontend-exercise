@@ -5,10 +5,11 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 // Components
-import QueueComponent from '../components/QueueComponent';
+import Column from '../components/Column';
 
 // Drag and drop.
-import { Droppable } from 'react-beautiful-dnd';
+import { DragDropContext } from 'react-beautiful-dnd';
+import { reorderLive } from '../redux/actions';
 
 const StoryList = styled.div`
    padding: 8px;
@@ -21,31 +22,96 @@ const mapStateToProps = state => {
   };
 };
 
+// const mapDispatchToProps = {
+//   reorderLive,
+// };
 
+class ConnectedQueueContainer extends React.Component {
+  constructor(props, context) {
+    super(props, context);
 
-const ConnectedQueueContainer = ({state}) => (
-    <Droppable droppableId={state.columns.queue.id}>
-      {provided => (
-        <StoryList
-            // Provides props that you need to be applied to the designated droppable component.
-            {...provided.droppableProps}
+     this.state = this.props.state;
+  }
 
-            // A styled component has a callback prop named innerRef which returns the component DOM node.
-            // Property which is a fxn used to supply the DOM node of your component to beautiful-dnd.
-            ref={provided.innerRef}
-        >
-          <QueueComponent
-              title={state.columns.queue.title}
-              state={state}
-          />
-          {/*Increases the necessary space when moving droppable items*/}
-          {provided.placeholder}
-        </StoryList>
-      )}
-    </Droppable>
+  // const mockDragResult = {
+  //   draggableId: '0',
+  //   type: 'TYPE',
+  //   reason: 'DROP',
+  //   source: {
+  //     droppableId: '0',
+  //     index: 0,
+  //   },
+  //   destination: {
+  //     droppableId: 'live',
+  //      index: 1,
+  //   },
+  // };
 
-);
+  onDragEnd = result => {
 
-const QueueContainer = connect(mapStateToProps)(ConnectedQueueContainer);
+    const {
+      destination,
+      source,
+      draggableId
+    } = result;
+
+    // console.log('column', state.columns[source.droppableId]);
+
+    // If there's no destination, then return.
+    if (!destination) return;
+
+    // Check to see if the location of the draggable has changed.
+    if (
+        destination.droppableId === source.droppableId &&
+        destination.index === source.index
+    ) {
+
+      // The user dropped the item back to the source; so don't do anything.
+      return;
+    }
+
+    // Reorder the story IDs for the column.
+    const column = this.state.columns[source.droppableId];
+    const newStoryIds = Array.from(column.storyIds);
+    newStoryIds.splice(source.index, 1);
+    newStoryIds.splice(destination.index, 0, draggableId);
+
+    const newColumn = {
+      ...column,
+      storyIds: newStoryIds,
+    };
+
+    const newState = {
+      ...this.state,
+      columns: {
+        ...this.state.columns,
+        [newColumn.id]: newColumn,
+      }
+    };
+
+    this.setState(newState);
+  };
+
+  render() {
+    return (
+        <DragDropContext onDragEnd={this.onDragEnd}>
+          {this.state.columnOrder.map(columnId => {
+            const column = this.state.columns[columnId];
+            const stories = column.storyIds.map(storyId => this.state.stories[storyId]);
+
+            console.log('stories', stories);
+            console.log('column', column);
+
+            return <Column key={column.id} column={column} stories={stories} />;
+          })}
+        </DragDropContext>
+    );
+  }
+}
+
+const QueueContainer = connect(
+    mapStateToProps,
+    null,
+)(ConnectedQueueContainer);
 
 export default QueueContainer;

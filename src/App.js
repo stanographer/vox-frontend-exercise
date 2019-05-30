@@ -2,14 +2,14 @@ import React from 'react';
 
 // Components
 import Nav from './components/Nav';
-import Main from './components/Main';
+import MainContainer from './containers/MainContainer';
 
 const App = () =>
     <div>
       <header>
         <Nav />
       </header>
-        <Main />
+        <MainContainer />
     </div>;
 
 export default App;

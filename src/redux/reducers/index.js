@@ -20,6 +20,7 @@ const rootReducer = (state = {}, action) => {
         liveOrder: null,
       };
     case ACTIONTYPES.REORDER_LIVE:
+      console.log('pay load', action.payload);
       return {
         ...state,
         liveOrder: action.payload,
