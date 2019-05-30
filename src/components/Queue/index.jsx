@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 // Components
 import StoryCard from '../../components/StoryCard';
 
+// Drag and drop.
+import { Draggable } from 'react-drag-and-drop'
+
 const mapStateToProps = state => {
   console.log('mapStateToProps', state);
   return {
@@ -24,6 +27,7 @@ const ConnectedQueue = ({stories}) => {
         </h1>
         {
           stories.map(({id, title, author, publishedTime, img, liveOrder}) => (
+              <Draggable type="story" data={JSON.stringify(id)}>
                   <StoryCard
                       key={id}
                       title={title}
@@ -32,6 +36,7 @@ const ConnectedQueue = ({stories}) => {
                       publishedTime={publishedTime}
                       liveOrder={liveOrder}
                   />
+              </Draggable>
               )
           )
         }

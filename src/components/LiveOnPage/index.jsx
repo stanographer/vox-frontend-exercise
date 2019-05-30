@@ -1,18 +1,25 @@
 import React from 'react';
-import { DropTarget } from 'react-dnd';
+import { Droppable } from 'react-drag-and-drop';
 
-const LiveOnPage = props => {
+function onDrop(data) {
+  alert(`a ${JSON.stringify(data)} dropped!`);
+  // => banana
+}
+
+const LiveOnPage = () => {
   return (
-      <section className="
-      bg-white
-      px-6
-      py-4
-      h-auto">
-        <h1 className="
-        font-bold
-        text-xl
-        pb-4">Live on the Page</h1>
-      </section>
+      <Droppable types={['story']} onDrop={onDrop.bind(this)}>
+        <section className="
+        bg-white
+        px-6
+        py-4
+        h-auto">
+          <h1 className="
+          font-bold
+          text-xl
+          pb-4">Live on the Page</h1>
+        </section>
+      </Droppable>
   );
 };
 
