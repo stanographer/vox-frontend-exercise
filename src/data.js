@@ -3,12 +3,12 @@ const initialState = {
     'queue': {
       id: 'queue',
       title: 'Queue',
-      taskIds: ['0', '1', '2', '3', '4'],
+      storyIds: ['0', '1', '2', '3', '4'],
     },
     'live': {
       id: 'live',
       title: 'Live on the page',
-      taskIds: [],
+      storyIds: [],
     }
   },
   columnOrder: [''],

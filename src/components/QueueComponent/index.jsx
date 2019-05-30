@@ -14,19 +14,19 @@ const QueueComponent = ({title, state}) => {
               ">
           {title}
         </h1>
-        {Object.values(state.stories)
-            .map((ob, key) => (
-                    <StoryCard
-                        key={key}
-                        id={key}
-                        title={ob.title}
-                        author={ob.author}
-                        publishedTime={ob.publishedTime}
-                        img={ob.img}
-                    />
-
-                )
-            )
+        {
+          state.columns.queue.storyIds.map((storyId, index) => {
+            if (state.stories[storyId]) {
+              return <StoryCard
+                  key={storyId}
+                  id={index}
+                  title={state.stories[storyId].title}
+                  author={state.stories[storyId].author}
+                  publishedTime={state.stories[storyId].publishedTime}
+                  img={state.stories[storyId].img}
+              />;
+            }
+          })
         }
       </section>
   );

@@ -21,6 +21,8 @@ const mapStateToProps = state => {
   };
 };
 
+
+
 const ConnectedQueueContainer = ({state}) => (
     <Droppable droppableId={state.columns.queue.id}>
       {provided => (

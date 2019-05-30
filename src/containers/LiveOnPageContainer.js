@@ -1,30 +1,49 @@
 import React from 'react';
-import LiveOnPageComponent from '../components/LiveOnPageComponent';
-import { Droppable } from 'react-drag-and-drop';
+import styled from 'styled-components';
+
+// Redux
 import { connect } from 'react-redux';
-import { addToLive } from '../redux/actions';
 
-function mapStateToProps(state) {
+// Components
+import LiveOnPageComponent from '../components/LiveOnPageComponent';
+
+// Drag and drop.
+import { Droppable } from 'react-beautiful-dnd';
+
+const StoryList = styled.div`
+   padding: 8px;
+`;
+
+const mapStateToProps = state => {
+  console.log('mapStateToProps', state);
   return {
-    state,
+    state: state
   };
-}
-
-const mapDispatchToProps = {
-  addToLive,
 };
 
-const ConnectedLiveOnPageContainer = ({addToLive}) => {
-  return (
-      <Droppable types={['story']} onDrop={addToLive.bind(this)}>
-        <LiveOnPageComponent />
-      </Droppable>
-  );
-};
+const ConnectedLiveOnPageContainer = ({state}) => (
+    <Droppable droppableId={state.columns.queue.id}>
+      {provided => (
+          <StoryList
+              // Provides props that you need to be applied to the designated droppable component.
+              {...provided.droppableProps}
 
-const LiveOnPageContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(ConnectedLiveOnPageContainer);
+              // A styled component has a callback prop named innerRef which returns the component DOM node.
+              // Property which is a fxn used to supply the DOM node of your component to beautiful-dnd.
+              ref={provided.innerRef}
+          >
+            <LiveOnPageComponent
+                title={state.columns.live.title}
+                state={state}
+            />
+            {/*Increases the necessary space when moving droppable items*/}
+            {provided.placeholder}
+          </StoryList>
+      )}
+    </Droppable>
+
+);
+
+const LiveOnPageContainer = connect(mapStateToProps)(ConnectedLiveOnPageContainer);
 
 export default LiveOnPageContainer;
