@@ -3,10 +3,17 @@ import * as ACTIONTYPES from '../constants';
 const rootReducer = (state = {}, action) => {
   switch (action.type) {
     case ACTIONTYPES.ADD_TO_LIVE:
-      return {
-        ...state,
-        liveOrder: action.payload,
-      };
+      const storyArr = state.stories;
+
+      console.log('state!', storyArr);
+      return storyArr.map((item, idx) => {
+        console.log(item, idx, );
+        if (idx === Number(action.payload.story)) {
+          return {
+            liveOrder: action.payload.story,
+          };
+        }
+      });
     case ACTIONTYPES.REMOVE_FROM_LIVE:
       return {
         ...state,
@@ -20,7 +27,7 @@ const rootReducer = (state = {}, action) => {
       // To-do: Reset all stories.
     case ACTIONTYPES.RESET_ALL_LIVE:
       return {
-        ...state
+        ...state,
       };
     default:
       return {

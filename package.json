@@ -5,10 +5,12 @@
   "dependencies": {
     "moment": "^2.24.0",
     "react": "^16.8.6",
+    "react-beautiful-dnd": "^11.0.3",
     "react-dom": "^16.8.6",
     "react-drag-and-drop": "^3.0.0",
     "react-scripts": "3.0.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "styled-components": "^4.2.1"
   },
   "scripts": {
     "start": "npm run watch:css & react-scripts start",

@@ -1,13 +1,29 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 // Components
 import PublishedTime from '../../components/PublishedTime';
 
-const StoryCard = ({title, author, publishedTime, img}) => {
+// Drag 'n drop.
+import { Draggable } from 'react-beautiful-dnd';
+
+const Container = styled.div`
+   border: 1px solid lightgrey;
+   border-radius: 2px;
+   padding: 8px;
+   margin-bottom: 8px;
+`;
+
+const StoryCard = ({id, title, author, publishedTime, img}) => {
   return (
-      <Fragment>
-        <div className="
+      <Draggable draggableId={title} index={id}>
+        {provided => (
+            <Container
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+                ref={provided.innerRef}
+                className="
         border
         border-borderGray
         border-solid
@@ -16,8 +32,8 @@ const StoryCard = ({title, author, publishedTime, img}) => {
         lg:max-w-full
         lg:flex
         mb-6">
-          <div
-              className="
+              <div
+                  className="
               h-auto
               lg:h-32
               lg:w-32
@@ -25,13 +41,13 @@ const StoryCard = ({title, author, publishedTime, img}) => {
               bg-cover
               text-center
               overflow-hidden"
-              style={{
-                backgroundImage: `url(${img})`
-              }}
-              title="Man holding a shotglass">
-          </div>
-          <div
-              className="
+                  style={{
+                    backgroundImage: `url(${img})`
+                  }}
+                  title="Man holding a shotglass">
+              </div>
+              <div
+                  className="
               bg-white
               p-4
               sm:p-2
@@ -39,47 +55,50 @@ const StoryCard = ({title, author, publishedTime, img}) => {
               flex-col
               justify-between
               leading-normal">
-            <div className="
+                <div className="
             mb-0
             lg:mt-4
             ">
-              <div className="
+                  <div className="
               text-gray-900
               font-bold
               text-lg">
-                {title}
-              </div>
-            </div>
-            <div className="
+                    {title}
+                  </div>
+                </div>
+                <div className="
             flex
             items-center
             mb-2">
-              <div className="text-sm">
-                <p className="
+                  <div className="text-sm">
+                    <p className="
                 pb-2
                 pt-1
                 sm:m-0
                 text-infoTextGray
                 leading-none">
-                  {author}
-                </p>
-                <PublishedTime
-                    time={publishedTime}
-                    classes="
+                      {author}
+                    </p>
+                    <PublishedTime
+                        time={publishedTime}
+                        classes="
                     text-xs
                     text-infoTextGray
                     mb-2
                     sm:m-0"
-                />
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </Fragment>
+            </Container>
+        )}
+
+      </Draggable>
   );
 };
 
 StoryCard.propTypes = {
+  id: PropTypes.number,
   title: PropTypes.string,
   author: PropTypes.string,
   publishedTime: PropTypes.object,
