@@ -21,7 +21,7 @@ export default class Column extends React.Component {
                 {...provided.droppableProps}
                 ref={provided.innerRef}
             >
-              {this.props.stories.map((story, index) => <StoryCard key={index} story={story} index={index} />)}
+              {this.props.stories.map((story, index) => <StoryCard key={story.id} story={story} index={index} />)}
               {provided.placeholder}
             </StoryList>
         )}

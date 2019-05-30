@@ -10,7 +10,6 @@ import { DragDropContext } from 'react-beautiful-dnd';
 
 
 const mapStateToProps = state => {
-  console.log('mapStateToProps', state);
   return {
     state: state
   };
@@ -62,7 +61,6 @@ const ConnectedMainContainer = ({state, reorderLive}) => {
 
     reorderLive(newState);
   };
-
 
   return (
       <DragDropContext onDragEnd={onDragEnd}>
