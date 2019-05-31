@@ -9,7 +9,7 @@ export const loadState = () => {
 
     console.log('serialized', JSON.parse(serializedState));
 
-    if (serializedState === null || {}) {
+    if (!serializedState || {}) {
       console.info('no (saved) local state found; handing you default instead!');
       return initialState;
     }

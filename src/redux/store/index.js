@@ -15,6 +15,6 @@ store.subscribe(throttle(() => {
   saveState({
     columns: store.getState().columns,
   })
-}, 1000));
+}, 500));
 
 export default store;

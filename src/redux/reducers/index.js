@@ -6,7 +6,7 @@ const rootReducer = (state = {}, action) => {
       console.log('save state!', action.payload);
       return {
         ...state,
-        columns: action.payload
+        columns: action.payload.columns,
       };
     case ACTIONTYPES.REMOVE_FROM_LIVE:
       return {
