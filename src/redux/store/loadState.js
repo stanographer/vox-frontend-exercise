@@ -5,16 +5,18 @@ export const loadState = () => {
 
   // Using try-catch block in case privacy settings prevent localstorage access.
   try {
-    const serializedState = localStorage.getItem('state');
 
-    console.log('serialized', JSON.parse(serializedState));
+    // Try to grab from localstorage API via a key.
+    const unSerializedState = localStorage.getItem('state');
 
-    if (!serializedState || {}) {
+    console.log('serialized', JSON.parse(unSerializedState));
+
+    if (!unSerializedState || {}) {
       console.info('no (saved) local state found; handing you default instead!');
       return initialState;
     }
 
-    return JSON.parse(serializedState);
+    return JSON.parse(unSerializedState);
   } catch (err) {
     console.error('There was an error retrieving your state from localstorage!');
     return undefined;

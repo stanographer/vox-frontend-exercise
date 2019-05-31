@@ -155,10 +155,11 @@ class ConnectedApp extends React.Component {
                   this.onReset();
                   this.resetChanges();
                 }}
-                onSaveState={() => {
+                onSaveState={async () => {
 
                   // Save changes to localstorage and fire notification.
-                  this.props.addToLive(this.state);
+                  await this.props.addToLive(this.state);
+                  await this.setState(this.props.state);
                   this.savedChanges();
                 }}
             />
