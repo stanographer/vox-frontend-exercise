@@ -22,6 +22,7 @@ const mapDispatchToProps = {
   resetAll,
 };
 
+// Give Container flex and padding to allow for column orientation.
 const Container = styled.div`
   display: flex;
   padding: 0 2rem;
@@ -31,15 +32,17 @@ class ConnectedApp extends React.Component {
   constructor(props, context) {
     super(props, context);
 
+    // The initial state of the app is determined by the Redux application state.
     this.state = this.props.state;
   }
 
+  // Reset the App component state as well as the Redux store state.
   onReset = () => {
     this.props.resetAll();
     this.setState(INITIAL_STATE);
   };
 
-  onDragEnd = result => {
+  onDragEnd = result =>  {
     const {
       destination,
       source,
@@ -63,6 +66,7 @@ class ConnectedApp extends React.Component {
     const start = this.state.columns[source.droppableId];
     const end = this.state.columns[destination.droppableId];
 
+    // The user is moving up and down in the same place.
     if (start === end) {
       const newStoryIds = Array.from(start.storyIds);
       newStoryIds.splice(source.index, 1);
