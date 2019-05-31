@@ -16,9 +16,9 @@ This app is my implementation based of this task given the project description a
 
 This is a simple front-end application that does not have a formal backend. It uses Redux to fetch original data from a hard-coded file and populates the application state. Once loaded, the main container component, App.js initializes its state based on application state.
 
-As the user rearranges the stories, those changes are only reflected in App's component state. Clicking Save Changes fires a Redux action that updates the global application state, to which all events are subscribed to via a loadState middleware which handles changes to the application state by attempting to save them (using try-catch in case the user does not allow localstorage access) or tries to retrieve any saved state in favor of populating the application state with the hard-coded values.
+As the user rearranges the stories, those changes are only reflected in App's component state. Clicking Save Changes dispatches a Redux action that updates the global application state, to which all events are subscribed to via a loadState module which handles changes by attempting to save them (using try-catch in case the user does not allow localstorage access) or tries to retrieve any saved state in favor of populating the application state with the hard-coded values.
 
-This is meant to simulate the fetching and putting of data on a server backend.
+This is meant to simulate the fetching and putting of data on a backend server.
 
 ## Contents
 
@@ -26,7 +26,7 @@ In ```/```, public contains your basic React public files such as the favicon, i
 
 Postcss.config.js contains a config file that lets postcss parse CSS and load vendor prefixes and CSS rules based on Can I Use.
 
-Tailwind.config.js contains configuration for Tailwind, a CSS utility framework that allows for rapid, class-based construction of front-end structures. It allows me to store commonly-used attributes for reuse, akin to SASS variables.
+Tailwind.config.js contains configuration for Tailwind, a CSS utility framework that allows for rapid, class-based construction of front-end structures. It allows developers to store commonly-used attributes for reuse, akin to SASS variables, minimizing style overrides and the need to heavily modularize style rules to specific components.
 
 React source code resides in ```src```. ```src/components``` contains presentational components, ```src/redux``` contains files used for Redux, ```src/styles``` contains my Tailwind CSS file, and ```src/data.js``` contains my mock data that would normally be served up by the backend.
 
@@ -36,7 +36,7 @@ React source code resides in ```src```. ```src/components``` contains presentati
  
  2. Right now, the app is serverless. A real version of this app would obviously have a backend that serves up the data rather than a static, hard-coded file.
  
- 3. Mobile compatibility. Right now, the app has rudimentary responsiveness. It is definitely harder to use on mobile than on the desktop version.
+ 3. Mobile compatibility. Right now, the app has rudimentary responsiveness. It is definitely harder to use on mobile than on the desktop version. Font and margin/padding scaling are handled via manually-set breakpoints such as ```lg:text-lg``` to indicate a larger font size on screens larger than 1024px (breakpoints are defined in the ```tailwind.config.js``` file).
  
  4. Badges indicating the story status are not placed correctly. Given the time constraint, this was something I left as a lower priority compared to getting the logic hooked up and working.
 
