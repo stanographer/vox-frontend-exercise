@@ -7,7 +7,7 @@ export const loadState = () => {
   try {
     const serializedState = localStorage.getItem('state');
 
-    if (serializedState === null) {
+    if (serializedState === undefined || {}) {
       console.info('no (saved) local state found; handing you default instead!');
       return initialState;
     }
@@ -16,6 +16,7 @@ export const loadState = () => {
 
     return JSON.parse(serializedState);
   } catch (err) {
+    console.error('There was an error retrieving your state from localstorage!');
     return undefined;
   }
 };
