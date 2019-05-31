@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { addToLive, resetAll } from './redux/actions';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { initialState as INITIAL_STATE } from './data';
 
 // Components
 import Nav from './components/Nav';
@@ -34,8 +35,8 @@ class ConnectedApp extends React.Component {
   }
 
   onReset = () => {
-    this.setState(this.props.state);
     this.props.resetAll();
+    this.setState(INITIAL_STATE);
   };
 
   onDragEnd = result => {
