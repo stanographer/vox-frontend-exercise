@@ -1,5 +1,7 @@
 # Vox Media Front-End Engineer Interview Exercise
 
+Deployed example [here](https://vox-frontend-exercise.herokuapp.com/).
+
 ## Intro
 
 This web app allow editors to place published stories on the home page of the website, and organize the order in which they'll appear on that page.
@@ -39,6 +41,8 @@ React source code resides in ```src```. ```src/components``` contains presentati
  3. Mobile compatibility. Right now, the app has rudimentary responsiveness. It is definitely harder to use on mobile than on the desktop version. Font and margin/padding scaling are handled via manually-set breakpoints such as ```lg:text-lg``` to indicate a larger font size on screens larger than 1024px (breakpoints are defined in the ```tailwind.config.js``` file).
  
  4. Badges indicating the story status are not placed correctly. Given the time constraint, this was something I left as a lower priority compared to getting the logic hooked up and working.
+ 
+ 5. Fix problem with persisting and retrieving state to and from localstorage.
 
 ## Installation
 
