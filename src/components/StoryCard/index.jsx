@@ -40,6 +40,7 @@ export default class StoryCard extends React.Component {
                       text-center
                       overflow-hidden"
                        style={{backgroundImage: `url(${this.props.story.img})`}}
+                       alt="Fill Murray"
                        title="Fill Murray">
                   </div>
                   <div className="
