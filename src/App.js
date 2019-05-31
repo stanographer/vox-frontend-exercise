@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { DragDropContext } from 'react-beautiful-dnd';
 import styled from 'styled-components';
-import { addToLive } from './redux/actions';
+import { addToLive, resetAll } from './redux/actions';
 
 // Components
 import Nav from './components/Nav';
@@ -15,7 +15,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  addToLive
+  addToLive,
+  resetAll,
 };
 
 const Container = styled.div`
@@ -32,6 +33,7 @@ class ConnectedApp extends React.Component {
 
   onReset = () => {
     this.setState(this.props.state);
+    this.props.resetAll();
   };
 
   onDragEnd = result => {

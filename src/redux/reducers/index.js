@@ -5,7 +5,8 @@ const rootReducer = (state = {}, action) => {
     case ACTIONTYPES.ADD_TO_LIVE:
       console.log('save state!', action.payload);
       return {
-        state: action.payload
+        ...state,
+        columns: action.payload
       };
     case ACTIONTYPES.REMOVE_FROM_LIVE:
       return {
@@ -20,7 +21,7 @@ const rootReducer = (state = {}, action) => {
       // To-do: Reset all stories in application state.
     case ACTIONTYPES.RESET_ALL_LIVE:
       return {
-        ...state,
+        state: null,
       };
     default:
       return {

@@ -11,10 +11,10 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
-// store.subscribe(throttle(() => {
-//   saveState({
-//     columns: store.getState('state').columns,
-//   })
-// }, 1000));
+store.subscribe(throttle(() => {
+  saveState({
+    columns: store.getState('state').columns,
+  })
+}, 1000));
 
 export default store;
