@@ -31,11 +31,10 @@ class ConnectedApp extends React.Component {
   };
 
   onDragEnd = result => {
-
     const {
       destination,
       source,
-      draggableId
+      draggableId,
     } = result;
 
     // If there's no destination, then return.

@@ -37,7 +37,13 @@ export default class Column extends React.Component {
                 ref={provided.innerRef}
                 isDraggingOver={snapshot.isDraggingOver}
             >
-              {this.props.stories.map((story, index) => <StoryCard key={story.id} story={story} index={index} />)}
+              {this.props.stories.map((story, index) =>
+                  <StoryCard
+                      columnId={this.props.column.id}
+                      key={story.id}
+                      story={story}
+                      index={index}
+                  />)}
               {provided.placeholder}
             </StoryList>
         )}

@@ -9,10 +9,10 @@ const Container = styled.div`
   background-color: ${props => props.isDragging ? '#effffc' : 'white'};
   border: 1px solid lightgrey;
   border-radius: 2px;
-  padding: 8px;
+  padding: 0;
   margin-bottom: 8px;
   min-width: 20rem;
-  max-width: 45rem;
+  max-width: 46rem;
 `;
 
 export default class StoryCard extends React.Component {
@@ -33,14 +33,11 @@ export default class StoryCard extends React.Component {
                 lg:flex">
                   <div
                       className="
-                      h-20
-                      lg:h-32
-                      lg:w-32
+                      h-48
+                      lg:h-40
+                      lg:w-40
                       flex-none
                       bg-cover
-                      rounded-t
-                      lg:rounded-t-none
-                      lg:rounded-l
                       text-center
                       overflow-hidden"
                       style={{backgroundImage: `url(${this.props.story.img})`}} title="Fill Murray">
@@ -48,11 +45,37 @@ export default class StoryCard extends React.Component {
                   <div
                       className="
                       px-4
-                      py-2
+                      pb-3
+                      pt-0
                       flex
                       flex-col
+                      flex-1
                       justify-end
                       leading-normal">
+                    <p className="
+                    text-sm
+                    text-white
+                    flex
+                    justify-end
+                    block
+                    m-0">
+                      <span
+                          className={`
+                          justify-end
+                          px-1
+                          py-1
+                          rounded
+                          text-xs
+                          ${this.props.columnId === 'queue'
+                              ? 'bg-errorRed'
+                              : 'bg-successGreen'}
+                          `}>{this.props.columnId === 'queue'
+                          ? 'Not placed'
+                          : this.props.index === 0
+                              ? 'Hero story'
+                              : `Slot ${this.props.index}`
+                      }</span>
+                    </p>
                     <div className="mb-0">
                       <div className="
                       font-bold
@@ -64,17 +87,22 @@ export default class StoryCard extends React.Component {
                     <div className="flex items-center">
                       <div className="text-sm">
                         <p className="
+                        text-lg
                           text-infoTextGray
                           leading-none
                           my-0
-                          pt-1">{this.props.story.author}</p>
-                        <p className="
+                          pt-0">{this.props.story.author} </p>
+                        <div className="
                           text-infoTextGray
+                          text-xs
                           p-0
                           my-1
                           ">
-                          <PublishedTime time={this.props.story.publishedTime} />
-                        </p>
+                          <PublishedTime
+                              classes="mb-0 mt-2"
+                              time={this.props.story.publishedTime}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
