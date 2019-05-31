@@ -8,7 +8,7 @@ import StoryCard from '../StoryCard';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: .05rem 1rem;
+  padding: 1rem .5rem;
   width: 40rem;
 `;
 
@@ -20,14 +20,28 @@ const StoryList = styled.div`
   background-color: ${props => (props.isDraggingOver ? '#ffe5fc' : 'white')};
   flex-grow: 1;
   min-height: 10rem;  /* So there's always a place to drag-and-drop. */
-  padding: 2rem;
   transition: background-color 0.2s ease;
+  padding: 1rem .5rem;
 `;
 
 export default class Column extends React.Component {
   render() {
-    return <Container>
-      <Title>
+    return <Container className="
+      bg-white
+      border-solid
+      border-borderGray
+      border-1
+      mr-6
+      my-0
+      ">
+      <Title className="
+      text-headlineDarkGray
+      text-2xl
+      mb-0
+      mt-0
+      px-2
+      py-0
+      ">
         {this.props.column.title}
       </Title>
       <Droppable droppableId={this.props.column.id}>

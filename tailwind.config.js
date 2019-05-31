@@ -19,7 +19,7 @@ module.exports = {
       backgroundLightGray: '#f9f9f9',
       borderGray: '#e1e1e1',
       errorRed: '#fa3b5d',
-      headlineDarkGray: '#383838',
+      headlineDarkGray: '#434343',
       infoTextGray: '#616161',
       infoTeal: '#0eceb5',
       successGreen: '#26d15f',

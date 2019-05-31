@@ -11,7 +11,7 @@ const Container = styled.div`
   border-radius: 2px;
   padding: 0;
   margin-bottom: 8px;
-  min-width: 20rem;
+  min-width: 10rem;
   max-width: 46rem;
 `;
 
@@ -31,19 +31,18 @@ export default class StoryCard extends React.Component {
                 w-full
                 lg:max-w-full
                 lg:flex">
-                  <div
-                      className="
-                      h-48
+                  <div className="
+                      h-0
                       lg:h-40
                       lg:w-40
                       flex-none
                       bg-cover
                       text-center
                       overflow-hidden"
-                      style={{backgroundImage: `url(${this.props.story.img})`}} title="Fill Murray">
+                       style={{backgroundImage: `url(${this.props.story.img})`}}
+                       title="Fill Murray">
                   </div>
-                  <div
-                      className="
+                  <div className="
                       px-4
                       pb-3
                       pt-0
@@ -59,16 +58,15 @@ export default class StoryCard extends React.Component {
                     justify-end
                     block
                     m-0">
-                      <span
-                          className={`
+                      <span className={`
                           justify-end
                           px-1
                           py-1
                           rounded
                           text-xs
                           ${this.props.columnId === 'queue'
-                              ? 'bg-errorRed'
-                              : 'bg-successGreen'}
+                          ? 'bg-errorRed'
+                          : 'bg-successGreen'}
                           `}>{this.props.columnId === 'queue'
                           ? 'Not placed'
                           : this.props.index === 0
@@ -79,7 +77,11 @@ export default class StoryCard extends React.Component {
                     <div className="mb-0">
                       <div className="
                       font-bold
-                      text-xl
+                      text-headlineDarkGray
+                      text-sm
+                      md:text-md
+                      lg:text-lg
+                      xl:text-xl
                       mb-0
                       py-1">{this.props.story.title}
                       </div>
@@ -87,7 +89,9 @@ export default class StoryCard extends React.Component {
                     <div className="flex items-center">
                       <div className="text-sm">
                         <p className="
-                        text-lg
+                          text-xs
+                          lg:text-sm
+                          xl:text-md
                           text-infoTextGray
                           leading-none
                           my-0

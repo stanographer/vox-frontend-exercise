@@ -47,7 +47,7 @@
 }
 
 .bg-headlineDarkGray{
-  background-color: #383838;
+  background-color: #434343;
 }
 
 .bg-infoTextGray{
@@ -447,7 +447,7 @@
 }
 
 .hover\:bg-headlineDarkGray:hover{
-  background-color: #383838;
+  background-color: #434343;
 }
 
 .hover\:bg-infoTextGray:hover{
@@ -847,7 +847,7 @@
 }
 
 .focus\:bg-headlineDarkGray:focus{
-  background-color: #383838;
+  background-color: #434343;
 }
 
 .focus\:bg-infoTextGray:focus{
@@ -1327,7 +1327,7 @@
 }
 
 .border-headlineDarkGray{
-  border-color: #383838;
+  border-color: #434343;
 }
 
 .border-infoTextGray{
@@ -1727,7 +1727,7 @@
 }
 
 .hover\:border-headlineDarkGray:hover{
-  border-color: #383838;
+  border-color: #434343;
 }
 
 .hover\:border-infoTextGray:hover{
@@ -2127,7 +2127,7 @@
 }
 
 .focus\:border-headlineDarkGray:focus{
-  border-color: #383838;
+  border-color: #434343;
 }
 
 .focus\:border-infoTextGray:focus{
@@ -5538,7 +5538,7 @@
 }
 
 .text-headlineDarkGray{
-  color: #383838;
+  color: #434343;
 }
 
 .text-infoTextGray{
@@ -5938,7 +5938,7 @@
 }
 
 .hover\:text-headlineDarkGray:hover{
-  color: #383838;
+  color: #434343;
 }
 
 .hover\:text-infoTextGray:hover{
@@ -6338,7 +6338,7 @@
 }
 
 .focus\:text-headlineDarkGray:focus{
-  color: #383838;
+  color: #434343;
 }
 
 .focus\:text-infoTextGray:focus{
@@ -7178,6 +7178,10 @@ h1 {
   border-bottom: 1px solid #e1e1e1;
 }
 
+.border-1 {
+  border-width: 1px;
+}
+
 @media (min-width: 320px){
   .xs\:appearance-none{
     -webkit-appearance: none;
@@ -7222,7 +7226,7 @@ h1 {
   }
 
   .xs\:bg-headlineDarkGray{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .xs\:bg-infoTextGray{
@@ -7622,7 +7626,7 @@ h1 {
   }
 
   .xs\:hover\:bg-headlineDarkGray:hover{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .xs\:hover\:bg-infoTextGray:hover{
@@ -8022,7 +8026,7 @@ h1 {
   }
 
   .xs\:focus\:bg-headlineDarkGray:focus{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .xs\:focus\:bg-infoTextGray:focus{
@@ -8502,7 +8506,7 @@ h1 {
   }
 
   .xs\:border-headlineDarkGray{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .xs\:border-infoTextGray{
@@ -8902,7 +8906,7 @@ h1 {
   }
 
   .xs\:hover\:border-headlineDarkGray:hover{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .xs\:hover\:border-infoTextGray:hover{
@@ -9302,7 +9306,7 @@ h1 {
   }
 
   .xs\:focus\:border-headlineDarkGray:focus{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .xs\:focus\:border-infoTextGray:focus{
@@ -12713,7 +12717,7 @@ h1 {
   }
 
   .xs\:text-headlineDarkGray{
-    color: #383838;
+    color: #434343;
   }
 
   .xs\:text-infoTextGray{
@@ -13113,7 +13117,7 @@ h1 {
   }
 
   .xs\:hover\:text-headlineDarkGray:hover{
-    color: #383838;
+    color: #434343;
   }
 
   .xs\:hover\:text-infoTextGray:hover{
@@ -13513,7 +13517,7 @@ h1 {
   }
 
   .xs\:focus\:text-headlineDarkGray:focus{
-    color: #383838;
+    color: #434343;
   }
 
   .xs\:focus\:text-infoTextGray:focus{
@@ -14382,7 +14386,7 @@ h1 {
   }
 
   .sm\:bg-headlineDarkGray{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .sm\:bg-infoTextGray{
@@ -14782,7 +14786,7 @@ h1 {
   }
 
   .sm\:hover\:bg-headlineDarkGray:hover{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .sm\:hover\:bg-infoTextGray:hover{
@@ -15182,7 +15186,7 @@ h1 {
   }
 
   .sm\:focus\:bg-headlineDarkGray:focus{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .sm\:focus\:bg-infoTextGray:focus{
@@ -15662,7 +15666,7 @@ h1 {
   }
 
   .sm\:border-headlineDarkGray{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .sm\:border-infoTextGray{
@@ -16062,7 +16066,7 @@ h1 {
   }
 
   .sm\:hover\:border-headlineDarkGray:hover{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .sm\:hover\:border-infoTextGray:hover{
@@ -16462,7 +16466,7 @@ h1 {
   }
 
   .sm\:focus\:border-headlineDarkGray:focus{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .sm\:focus\:border-infoTextGray:focus{
@@ -19873,7 +19877,7 @@ h1 {
   }
 
   .sm\:text-headlineDarkGray{
-    color: #383838;
+    color: #434343;
   }
 
   .sm\:text-infoTextGray{
@@ -20273,7 +20277,7 @@ h1 {
   }
 
   .sm\:hover\:text-headlineDarkGray:hover{
-    color: #383838;
+    color: #434343;
   }
 
   .sm\:hover\:text-infoTextGray:hover{
@@ -20673,7 +20677,7 @@ h1 {
   }
 
   .sm\:focus\:text-headlineDarkGray:focus{
-    color: #383838;
+    color: #434343;
   }
 
   .sm\:focus\:text-infoTextGray:focus{
@@ -21542,7 +21546,7 @@ h1 {
   }
 
   .md\:bg-headlineDarkGray{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .md\:bg-infoTextGray{
@@ -21942,7 +21946,7 @@ h1 {
   }
 
   .md\:hover\:bg-headlineDarkGray:hover{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .md\:hover\:bg-infoTextGray:hover{
@@ -22342,7 +22346,7 @@ h1 {
   }
 
   .md\:focus\:bg-headlineDarkGray:focus{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .md\:focus\:bg-infoTextGray:focus{
@@ -22822,7 +22826,7 @@ h1 {
   }
 
   .md\:border-headlineDarkGray{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .md\:border-infoTextGray{
@@ -23222,7 +23226,7 @@ h1 {
   }
 
   .md\:hover\:border-headlineDarkGray:hover{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .md\:hover\:border-infoTextGray:hover{
@@ -23622,7 +23626,7 @@ h1 {
   }
 
   .md\:focus\:border-headlineDarkGray:focus{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .md\:focus\:border-infoTextGray:focus{
@@ -27033,7 +27037,7 @@ h1 {
   }
 
   .md\:text-headlineDarkGray{
-    color: #383838;
+    color: #434343;
   }
 
   .md\:text-infoTextGray{
@@ -27433,7 +27437,7 @@ h1 {
   }
 
   .md\:hover\:text-headlineDarkGray:hover{
-    color: #383838;
+    color: #434343;
   }
 
   .md\:hover\:text-infoTextGray:hover{
@@ -27833,7 +27837,7 @@ h1 {
   }
 
   .md\:focus\:text-headlineDarkGray:focus{
-    color: #383838;
+    color: #434343;
   }
 
   .md\:focus\:text-infoTextGray:focus{
@@ -28702,7 +28706,7 @@ h1 {
   }
 
   .lg\:bg-headlineDarkGray{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .lg\:bg-infoTextGray{
@@ -29102,7 +29106,7 @@ h1 {
   }
 
   .lg\:hover\:bg-headlineDarkGray:hover{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .lg\:hover\:bg-infoTextGray:hover{
@@ -29502,7 +29506,7 @@ h1 {
   }
 
   .lg\:focus\:bg-headlineDarkGray:focus{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .lg\:focus\:bg-infoTextGray:focus{
@@ -29982,7 +29986,7 @@ h1 {
   }
 
   .lg\:border-headlineDarkGray{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .lg\:border-infoTextGray{
@@ -30382,7 +30386,7 @@ h1 {
   }
 
   .lg\:hover\:border-headlineDarkGray:hover{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .lg\:hover\:border-infoTextGray:hover{
@@ -30782,7 +30786,7 @@ h1 {
   }
 
   .lg\:focus\:border-headlineDarkGray:focus{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .lg\:focus\:border-infoTextGray:focus{
@@ -34193,7 +34197,7 @@ h1 {
   }
 
   .lg\:text-headlineDarkGray{
-    color: #383838;
+    color: #434343;
   }
 
   .lg\:text-infoTextGray{
@@ -34593,7 +34597,7 @@ h1 {
   }
 
   .lg\:hover\:text-headlineDarkGray:hover{
-    color: #383838;
+    color: #434343;
   }
 
   .lg\:hover\:text-infoTextGray:hover{
@@ -34993,7 +34997,7 @@ h1 {
   }
 
   .lg\:focus\:text-headlineDarkGray:focus{
-    color: #383838;
+    color: #434343;
   }
 
   .lg\:focus\:text-infoTextGray:focus{
@@ -35862,7 +35866,7 @@ h1 {
   }
 
   .xl\:bg-headlineDarkGray{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .xl\:bg-infoTextGray{
@@ -36262,7 +36266,7 @@ h1 {
   }
 
   .xl\:hover\:bg-headlineDarkGray:hover{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .xl\:hover\:bg-infoTextGray:hover{
@@ -36662,7 +36666,7 @@ h1 {
   }
 
   .xl\:focus\:bg-headlineDarkGray:focus{
-    background-color: #383838;
+    background-color: #434343;
   }
 
   .xl\:focus\:bg-infoTextGray:focus{
@@ -37142,7 +37146,7 @@ h1 {
   }
 
   .xl\:border-headlineDarkGray{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .xl\:border-infoTextGray{
@@ -37542,7 +37546,7 @@ h1 {
   }
 
   .xl\:hover\:border-headlineDarkGray:hover{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .xl\:hover\:border-infoTextGray:hover{
@@ -37942,7 +37946,7 @@ h1 {
   }
 
   .xl\:focus\:border-headlineDarkGray:focus{
-    border-color: #383838;
+    border-color: #434343;
   }
 
   .xl\:focus\:border-infoTextGray:focus{
@@ -41353,7 +41357,7 @@ h1 {
   }
 
   .xl\:text-headlineDarkGray{
-    color: #383838;
+    color: #434343;
   }
 
   .xl\:text-infoTextGray{
@@ -41753,7 +41757,7 @@ h1 {
   }
 
   .xl\:hover\:text-headlineDarkGray:hover{
-    color: #383838;
+    color: #434343;
   }
 
   .xl\:hover\:text-infoTextGray:hover{
@@ -42153,7 +42157,7 @@ h1 {
   }
 
   .xl\:focus\:text-headlineDarkGray:focus{
-    color: #383838;
+    color: #434343;
   }
 
   .xl\:focus\:text-infoTextGray:focus{

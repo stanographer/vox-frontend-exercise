@@ -2,16 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { DragDropContext } from 'react-beautiful-dnd';
 import styled from 'styled-components';
+import { addToLive } from './redux/actions';
 
 // Components
 import Nav from './components/Nav';
 import Column from './components/Column';
 
-
 const mapStateToProps = state => {
   return {
     state: state
   };
+};
+
+const mapDispatchToProps = {
+  addToLive
 };
 
 const Container = styled.div`
@@ -27,7 +31,7 @@ class ConnectedApp extends React.Component {
   }
 
   onReset = () => {
-     this.setState(this.props.state);
+    this.setState(this.props.state);
   };
 
   onDragEnd = result => {
@@ -72,8 +76,8 @@ class ConnectedApp extends React.Component {
         },
       };
 
-     this.setState(newState);
-     return;
+      this.setState(newState);
+      return;
     }
 
     // Moving from one column to another.
@@ -109,10 +113,18 @@ class ConnectedApp extends React.Component {
     return (
         <div>
           <header>
-            <Nav onReset={this.onReset} />
+            <Nav
+                onReset={this.onReset}
+                onSaveState={() => {
+                  this.props.addToLive(this.state)
+                }}
+            />
           </header>
           <DragDropContext onDragEnd={this.onDragEnd}>
-            <Container>
+            <Container className="
+            mx-5
+            my-4
+            px-0">
               {this.state.columnOrder.map(columnId => {
                 const column = this.state.columns[columnId];
                 const stories = column.storyIds.map(storyId => this.state.stories[storyId]);
@@ -122,12 +134,13 @@ class ConnectedApp extends React.Component {
             </Container>
           </DragDropContext>
         </div>
-    )
+    );
   }
 }
 
 const App = connect(
     mapStateToProps,
+    mapDispatchToProps,
 )(ConnectedApp);
 
 export default App;
