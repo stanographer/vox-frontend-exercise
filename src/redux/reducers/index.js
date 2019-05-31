@@ -13,10 +13,10 @@ const rootReducer = (state = {}, action) => {
         liveOrder: null,
       };
     case ACTIONTYPES.REORDER_LIVE:
-      console.log('pay load', action.payload);
+      console.log('pay load', action.payload, state);
       return {
         ...state,
-        liveOrder: action.payload,
+        columns: action.payload.columns,
       };
       // To-do: Reset all stories.
     case ACTIONTYPES.RESET_ALL_LIVE:

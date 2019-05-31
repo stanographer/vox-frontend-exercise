@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Nav = props => {
+const Nav = ({onReset}) => {
   return (
       <nav className="
       border-b
@@ -29,7 +29,8 @@ const Nav = props => {
             px-4
             rounded
             text-white
-            ">Reset
+            "
+            onClick={onReset}>Reset
             </button>
             <button className="
             bg-successGreen
