@@ -65,3 +65,5 @@ npm run dev
 ```sh
 npm run build
 ```
+
+And then serving the file locally with ```serve -s build```.
