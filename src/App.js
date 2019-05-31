@@ -150,10 +150,14 @@ class ConnectedApp extends React.Component {
             <ToastContainer containerId={'A'} position={toast.POSITION.TOP_CENTER} />
             <Nav
                 onReset={() => {
+
+                  // Fire reset and notification.
                   this.onReset();
                   this.resetChanges();
                 }}
                 onSaveState={() => {
+
+                  // Save changes to localstorage and fire notification.
                   this.props.addToLive(this.state);
                   this.savedChanges();
                 }}
