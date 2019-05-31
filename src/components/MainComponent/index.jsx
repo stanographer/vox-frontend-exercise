@@ -1,5 +1,5 @@
 import React from 'react';
-import QueueContainer from '../../containers/QueueContainer';
+import ColumnContainer from '../../containers/ColumnContainer';
 import LiveOnPageContainer from '../../containers/LiveOnPageContainer';
 
 // MainComponent component that wraps home-page elements.
@@ -16,22 +16,11 @@ const Main = () => {
             h-12
             w-full
             sm:w-full
-            md:w-1/2
             h-12">
             <div className="
             bg-white
             h-auto">
-              <QueueContainer />
-            </div>
-          </div>
-          <div className="
-            w-full
-            sm:w-full
-            md:w-1/2
-            px-6
-            h-12">
-            <div className="bg-gray-400">
-              <LiveOnPageContainer />
+              <ColumnContainer />
             </div>
           </div>
         </div>

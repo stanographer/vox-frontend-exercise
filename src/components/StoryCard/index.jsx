@@ -11,6 +11,8 @@ const Container = styled.div`
   border-radius: 2px;
   padding: 8px;
   margin-bottom: 8px;
+  min-width: 20rem;
+  max-width: 25rem;
 `;
 
 export default class StoryCard extends React.Component {

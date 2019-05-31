@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { reorderLive } from '../redux/actions';
+import {
+  addToLive,
+  reorderLive,
+} from '../redux/actions';
 
 // Components
 import MainComponent from '../components/MainComponent';
@@ -16,6 +19,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
+  addToLive,
   reorderLive,
 };
 
@@ -44,19 +48,54 @@ const ConnectedMainContainer = ({state, reorderLive}) => {
     }
 
     // Reorder the story IDs for the column.
-    const column = state.columns[source.droppableId];
-    const newStoryIds = Array.from(column.storyIds);
-    newStoryIds.splice(source.index, 1);
-    newStoryIds.splice(destination.index, 0, draggableId);
+    const start = state.columns[source.droppableId];
+    const end = state.columns[destination.droppableId];
 
-    const newColumn = {
-      ...column,
-      storyIds: newStoryIds,
+    // If reordering the same column.
+    if (start === end) {
+      const newStoryIds = Array.from(start.storyIds);
+
+      newStoryIds.splice(source.index, 1);
+      newStoryIds.splice(destination.index, 0, draggableId);
+
+      const newColumn = {
+        ...start,
+        storyIds: newStoryIds,
+      };
+
+      const newState = {
+        ...state.columns,
+        [newColumn.id]: newColumn,
+      };
+
+      reorderLive(newState);
+      return;
+    }
+
+    // Moving from one column to another.
+    const startStoryIds = Array.from(start.storyIds);
+    startStoryIds.splice(source.index, 1);
+
+    const endStoryIds = Array.from(end.storyIds);
+    endStoryIds.splice(destination.index, 0, draggableId);
+
+    const newStart = {
+      ...start,
+      storyIds: startStoryIds,
+    };
+
+    const newEnd = {
+      ...end,
+      storyIds: endStoryIds,
     };
 
     const newState = {
-      ...state.columns,
-      [newColumn.id]: newColumn,
+      ...state,
+      columns: {
+        ...state.columns,
+        [newStart.id]: newStart,
+        [newEnd.id]: newEnd,
+      },
     };
 
     reorderLive(newState);
