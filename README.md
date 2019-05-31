@@ -20,6 +20,26 @@ As the user rearranges the stories, those changes are only reflected in App's co
 
 This is meant to simulate the fetching and putting of data on a server backend.
 
+## Contents
+
+In ```/```, public contains your basic React public files such as the favicon, index.html file that loads the bundled .js files, and the manifest.
+
+Postcss.config.js contains a config file that lets postcss parse CSS and load vendor prefixes and CSS rules based on Can I Use.
+
+Tailwind.config.js contains configuration for Tailwind, a CSS utility framework that allows for rapid, class-based construction of front-end structures. It allows me to store commonly-used attributes for reuse, akin to SASS variables.
+
+React source code resides in ```src```. ```src/components``` contains presentational components, ```src/redux``` contains files used for Redux, ```src/styles``` contains my Tailwind CSS file, and ```src/data.js``` contains my mock data that would normally be served up by the backend.
+
+## TO-DO
+
+ 1. Due to time constraints, testing was definitely left on the backburner. Testing is a crucial process to ensure all code is up to shipping requirements before deployment. This was unfortunately left out but given more time would definitely be taken into account.
+ 
+ 2. Right now, the app is serverless. A real version of this app would obviously have a backend that serves up the data rather than a static, hard-coded file.
+ 
+ 3. Mobile compatibility. Right now, the app has rudimentary responsiveness. It is definitely harder to use on mobile than on the desktop version.
+ 
+ 4. Badges indicating the story status are not placed correctly. Given the time constraint, this was something I left as a lower priority compared to getting the logic hooked up and working.
+
 ## Installation
 
 To install this application, you will need Node 10.x.x or higher installed on your system.
