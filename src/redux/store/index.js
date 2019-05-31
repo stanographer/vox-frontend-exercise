@@ -13,7 +13,7 @@ const store = createStore(
 
 store.subscribe(throttle(() => {
   saveState({
-    columns: store.getState('state').columns,
+    columns: store.getState().columns,
   })
 }, 1000));
 

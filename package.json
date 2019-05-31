@@ -9,6 +9,7 @@
     "react-beautiful-dnd": "^11.0.3",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
+    "react-toastify": "^5.2.1",
     "redux": "^4.0.1",
     "serve": "^11.0.1",
     "styled-components": "^4.2.1"

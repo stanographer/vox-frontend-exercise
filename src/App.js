@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { DragDropContext } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 import { addToLive, resetAll } from './redux/actions';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Components
 import Nav from './components/Nav';
@@ -111,14 +113,48 @@ class ConnectedApp extends React.Component {
     this.setState(newState);
   };
 
+  // Toast notifications.
+  savedChanges = () => {
+    if (!toast.isActive(this.toastId)) {
+      toast('Your changes have been saved! 🌈', {
+        containerId: 'A',
+        type: 'success',
+      });
+    }
+  };
+
+  resetChanges = () => {
+    if (!toast.isActive(this.toastId)) {
+      toast('Your changes have been reset! 🦄', {
+        containerId: 'A',
+        type: 'info',
+      });
+    }
+  };
+
+  // To-do: implement failed-changes notification.
+  failedChanges = () => {
+    if (!toast.isActive(this.toastId)) {
+      toast('Failed to save changes! 😩', {
+        containerId: 'A',
+        type: 'error',
+      });
+    }
+  };
+
   render() {
     return (
         <div>
           <header>
+            <ToastContainer containerId={'A'} position={toast.POSITION.TOP_CENTER} />
             <Nav
-                onReset={this.onReset}
+                onReset={() => {
+                  this.onReset();
+                  this.resetChanges();
+                }}
                 onSaveState={() => {
-                  this.props.addToLive(this.state)
+                  this.props.addToLive(this.state);
+                  this.savedChanges();
                 }}
             />
           </header>
