@@ -19,7 +19,7 @@
     "dev": "npm run watch:css & react-scripts start",
     "build": "npm run build:css && react-scripts build",
     "build:css": "postcss src/styles/index.css -o src/index.css",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "watch:css": "postcss src/styles/index.css -o src/index.css -w",
     "heroku-postbuild": "npm run build"
@@ -41,6 +41,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
+    "enzyme": "^3.10.0",
+    "enzyme-to-json": "^3.3.5",
     "postcss-cli": "^6.1.2",
     "prop-types": "^15.7.2",
     "react-redux": "^7.0.3",

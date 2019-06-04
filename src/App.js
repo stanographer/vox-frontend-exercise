@@ -159,7 +159,10 @@ class ConnectedApp extends React.Component {
     return (
         <div>
           <header>
-            <ToastContainer containerId={'A'} position={toast.POSITION.TOP_CENTER} />
+            <ToastContainer
+                containerId={'A'}
+                position={toast.POSITION.TOP_CENTER}
+            />
             <Nav
                 onReset={() => {
 
